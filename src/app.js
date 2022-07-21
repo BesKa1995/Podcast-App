@@ -1,3 +1,4 @@
+import { Question } from './question'
 import './styles/style.css'
 import { isValid } from './utils'
 
@@ -6,7 +7,9 @@ const input = form.querySelector('#question-input')
 const submitBtn = form.querySelector('#submit')
 
 form.addEventListener('submit', submitFormHandler)
-
+input.addEventListener('input', () => {
+  submitBtn.disabled = !isValid(input.value)
+})
 
 function submitFormHandler(event) {
   event.preventDefault()
@@ -15,5 +18,11 @@ function submitFormHandler(event) {
       text: input.value.trim(),
       date: new Date().toJSON()
     }
+    Question.create(question)
+      .then(() => {
+        input.value = ''
+        submitBtn.disabled = true
+        console.log('succeeded')
+      })
   }
 }
