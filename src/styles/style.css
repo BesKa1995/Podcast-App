@@ -20,7 +20,7 @@ button {
    * Sidebar CSS
    */
 #sidebar {
-  background-color: #E57373;
+  background-color: #2196F3;
   padding: 15px;
 }
 
@@ -44,4 +44,5 @@ button {
 }
 .author {
   font-size: 0.8rem;
+  color: white;
 }/*# sourceMappingURL=style.css.map */
