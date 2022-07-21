@@ -65,4 +65,9 @@ button {
 }
 .modal .modal-content {
   padding: 20px;
+}
+
+.error {
+  font-size: 1rem;
+  color: red;
 }/*# sourceMappingURL=style.css.map */

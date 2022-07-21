@@ -1,3 +1,4 @@
+import { authWidthEmailAndPassword, getAuthForm } from './auth'
 import { Question } from './question'
 import './styles/style.css'
 import { createModal, isValid } from './utils'
@@ -24,15 +25,32 @@ function submitFormHandler(event) {
       .then(() => {
         input.value = ''
         submitBtn.disabled = true
-        console.log('succeeded')
       })
   }
 }
 
 
 function openModal() {
+  createModal('authorization', getAuthForm())
+  document.getElementById('auth-form')
+    .addEventListener('submit', authFormHandler)
+}
 
-  createModal('authorization', `
-    <h1>Test</h1>
-  `)
+function authFormHandler(event) {
+  event.preventDefault()
+  const email = event.target.querySelector('#email').value
+  const password = event.target.querySelector('#password').value
+  console.log(email, password)
+  authWidthEmailAndPassword(email, password)
+    .then(token => Question.fetch(token))
+    .then(renderModalAfterAuth)
+}
+
+
+function renderModalAfterAuth(content) {
+  if (typeof content === 'string') {
+    createModal('Error', content)
+  } else {
+    createModal('Question List', Question.listToHTML(content))
+  }
 }
