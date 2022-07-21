@@ -5,6 +5,8 @@ import { createModal, isValid } from './utils'
 const form = document.getElementById('form')
 const input = form.querySelector('#question-input')
 const submitBtn = form.querySelector('#submit')
+const modalBtn = document.getElementById('modal-btn')
+modalBtn.addEventListener('click', openModal)
 window.addEventListener('load', Question.renderList)
 form.addEventListener('submit', submitFormHandler)
 input.addEventListener('input', () => {
@@ -25,4 +27,12 @@ function submitFormHandler(event) {
         console.log('succeeded')
       })
   }
+}
+
+
+function openModal() {
+
+  createModal('authorization', `
+    <h1>Test</h1>
+  `)
 }

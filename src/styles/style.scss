@@ -58,3 +58,19 @@ button {
   bottom: 50px;
   right: 50px;
 }
+
+.modal {
+  max-width: 600px;
+  max-height: 400px;
+  background-color: white;
+  margin: 100px auto;
+  overflow-y: auto;
+
+  & h1 {
+    text-align: center;
+  }
+
+  & .modal-content {
+    padding: 20px;
+  }
+}

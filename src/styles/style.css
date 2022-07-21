@@ -51,4 +51,18 @@ button {
   position: fixed;
   bottom: 50px;
   right: 50px;
+}
+
+.modal {
+  max-width: 600px;
+  max-height: 400px;
+  background-color: white;
+  margin: 100px auto;
+  overflow-y: auto;
+}
+.modal h1 {
+  text-align: center;
+}
+.modal .modal-content {
+  padding: 20px;
 }/*# sourceMappingURL=style.css.map */
