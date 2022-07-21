@@ -1,11 +1,11 @@
 import { Question } from './question'
 import './styles/style.css'
-import { isValid } from './utils'
+import { createModal, isValid } from './utils'
 
 const form = document.getElementById('form')
 const input = form.querySelector('#question-input')
 const submitBtn = form.querySelector('#submit')
-
+window.addEventListener('load', Question.renderList)
 form.addEventListener('submit', submitFormHandler)
 input.addEventListener('input', () => {
   submitBtn.disabled = !isValid(input.value)

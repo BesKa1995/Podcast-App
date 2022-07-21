@@ -45,4 +45,10 @@ button {
 .author {
   font-size: 0.8rem;
   color: white;
+}
+
+.floating-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
 }/*# sourceMappingURL=style.css.map */
